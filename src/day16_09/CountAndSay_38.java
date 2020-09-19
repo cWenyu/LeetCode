@@ -49,7 +49,7 @@ public class CountAndSay_38 {
                 cnt = 1;
             }
         }
-        System.out.println(res.toString());
+        System.out.println("n: " + n + ",   " + res.toString());
         return res.toString();
     }
 }
