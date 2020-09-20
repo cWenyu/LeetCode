@@ -1,6 +1,7 @@
 package sumTwo;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class sumTwo {
@@ -17,12 +18,14 @@ public class sumTwo {
          * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
          */
 
-        try {
+//        try {
+//            int[] results = twoSum2(new int[]{2, 2, 7, 11, 15}, 9);
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
 
-            int[] results = twoSum2(new int[]{2, 2, 7, 11, 15}, 9);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        int[] results = twoSum3(new int[]{2, 2, 7, 11, 15}, 13);
+        System.out.println(Arrays.toString(results));
     }
 
     //解法1
@@ -59,5 +62,21 @@ public class sumTwo {
         }
 
         throw new IllegalArgumentException("No two sum solution");
+    }
+
+    public static int[] twoSum3(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        //查看表中是否有值 = target-当前元素的值
+        for (int i = 0; i < nums.length; i++) {
+            int compare = target - nums[i];
+
+            if (map.containsKey(compare)) {
+                return new int[]{map.get(compare), i};
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+
+        return new int[]{};
     }
 }

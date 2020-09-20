@@ -30,6 +30,7 @@ public class reverseInt_7 {
         int ans = 0;
         while (x != 0) {
             int pop = x % 10;
+            //注意越界的问题
             if (ans > Integer.MAX_VALUE / 10 || (ans == Integer.MAX_VALUE / 10 && pop > 7)) {
                 return 0;
             }
