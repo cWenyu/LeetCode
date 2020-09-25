@@ -24,10 +24,15 @@ public class ConvertToTitle_168 {
         System.out.println(convertToTitle(28));
     }
 
+    /**
+     * 25位进制
+     * @param n
+     * @return
+     */
     public static String convertToTitle(int n) {
         StringBuilder strBuilder = new StringBuilder();
         while (n > 0) {
-            n--;
+            n--; //为什么先-1？ 1=> 'A' 但 'A'+1 => 'B'
             strBuilder.append((char) ('A' + (n) % 26));
             n /= 26;
         }
